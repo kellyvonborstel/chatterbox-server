@@ -22,6 +22,31 @@ var collectData = function(request, callback) {
   });
 };
 
+var messages = [
+  {
+    text: 'hello world',
+    username: 'kelly'
+  }
+];
+
+var actions = {
+  GET: function(request, response) {
+    sendResponse(response, {results: messages});
+
+  },
+  POST: function(request, response) {
+    collectData(request, function(message) {
+      messages.push(message);
+      sendResponse(response, {objectId: 1});
+    });
+
+  },
+  OPTIONS: function(request, response) {
+    sendResponse(response, null);
+
+  },
+};
+
 module.exports = function(request, response) {
 
   console.log('Serving request type ' + request.method + ' for url ' + request.url);
