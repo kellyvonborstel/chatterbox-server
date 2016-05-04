@@ -22,10 +22,13 @@ var collectData = function(request, callback) {
   });
 };
 
+var objectId = 1;
+
 var messages = [
   {
     text: 'hello world',
-    username: 'kelly'
+    username: 'kelly',
+    objectId: objectId
   }
 ];
 
@@ -36,6 +39,7 @@ var actions = {
   },
   POST: function(request, response) {
     collectData(request, function(message) {
+      message.objectId = objectId++;
       messages.push(message);
       sendResponse(response, {objectId: 1});
     });
@@ -44,7 +48,7 @@ var actions = {
   OPTIONS: function(request, response) {
     sendResponse(response, null);
 
-  },
+  }
 };
 
 module.exports = function(request, response) {
