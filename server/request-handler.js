@@ -53,8 +53,6 @@ var actions = {
 
 module.exports = function(request, response) {
 
-  console.log('Serving request type ' + request.method + ' for url ' + request.url);
-
   var action = actions[request.method];
 
   if (action) {
