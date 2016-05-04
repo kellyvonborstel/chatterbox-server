@@ -12,7 +12,6 @@ var routes = {
 };
 
 var server = http.createServer(function(request, response) {
-
   var route = routes[url.parse(request.url).pathname];
   if (route) {
     route(request, response);

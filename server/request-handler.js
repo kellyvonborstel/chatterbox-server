@@ -12,7 +12,6 @@ var messages = [
 var actions = {
   GET: function(request, response) {
     utils.sendResponse(response, {results: messages}, 200);
-
   },
   POST: function(request, response) {
     utils.collectData(request, function(message) {
@@ -20,11 +19,9 @@ var actions = {
       messages.push(message);
       utils.sendResponse(response, {objectId: message.objectId}, 201);
     });
-
   },
   OPTIONS: function(request, response) {
     utils.sendResponse(response, null, 200);
-
   }
 };
 
