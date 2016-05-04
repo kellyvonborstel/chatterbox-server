@@ -7,17 +7,18 @@ var port = 3000;
 
 var ip = '127.0.0.1';
 
+var routes = {
+  '/classes/chatterbox': handleRequest
+};
+
 var server = http.createServer(function(request, response) {
-  console.log('Serving request type ' + request.method + ' for url ' + request.url);
 
   var urlParts = urlParser.parse(request.url);
-  console.log(urlParts);
 
-  if (urlParts.pathname === '/classes/chatterbox') {
-    handleRequest(request, response);
-  }
-  else {
-    utils.sendResponse(response, 'Not Found');
+  var route = routes[urlParts.pathname];
+
+  if (route) {
+    route(request, response);
   }
 
   handleRequest(request, response);
