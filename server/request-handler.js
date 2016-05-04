@@ -61,7 +61,7 @@ module.exports = function(request, response) {
     action(request, response);
   }
   else {
-    // error handling
+    sendResponse(response, 'Not Found', 404);
   }
 
 };
