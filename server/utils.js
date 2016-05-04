@@ -21,3 +21,15 @@ exports.collectData = function(request, callback) {
     callback(JSON.parse(data));
   });
 };
+
+exports.makeActionHandler = function(actionMap) {
+  return function(request, response) {
+    var action = actionMap[request.method];
+    if (action) {
+      action(request, response);
+    } 
+    else {
+      exports.sendResponse(response, '');
+    }
+  };
+};
