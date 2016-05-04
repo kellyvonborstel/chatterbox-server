@@ -1,6 +1,7 @@
 var http = require('http');
 var handleRequest = require('./request-handler');
 var urlParser = require('url');
+var utils = require('./utils');
 
 var port = 3000;
 
@@ -16,7 +17,7 @@ var server = http.createServer(function(request, response) {
     handleRequest(request, response);
   }
   else {
-    // handle error
+    utils.sendResponse(response, 'Not Found');
   }
 
   handleRequest(request, response);
