@@ -6,6 +6,22 @@ var headers = {
   'Content-Type': 'application/json'
 };
 
+var sendResponse = function(response, data, statusCode) {
+  statusCode = statusCode || 200;
+  response.writeHead(statusCode, headers);
+  response.end(JSON.stringify(data));
+};
+
+var collectData = function(request, callback) {
+  var data = '';
+  request.on('data', function(chunk) {
+    data += chunk;
+  });
+  request.on('end', function() {
+    callback(JSON.parse(data));
+  });
+};
+
 module.exports = function(request, response) {
 
   console.log('Serving request type ' + request.method + ' for url ' + request.url);
