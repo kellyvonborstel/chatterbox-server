@@ -17,8 +17,8 @@ npm install
 node server/basic-server.js
 ``` 
 ```
-open client/index.html
-``` 
-```
 npm test
 ```
+```
+open client/index.html
+``` 
