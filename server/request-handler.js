@@ -1,13 +1,7 @@
 var utils = require('./utils');
 
 var objectId = 1;
-var messages = [
-  // {
-  //   text: 'hello world',
-  //   username: 'kelly',
-  //   objectId: objectId
-  // }
-];
+var messages = [];
 
 var actions = {
   GET: function(request, response) {
