@@ -19,11 +19,6 @@ node server/basic-server.js
 ```
 open client/index.html
 ``` 
-
-### Testing
-
-Tests are located in the /server/spec directory. To run them from the command line, enter the following:
-
 ```
 npm test
 ```
