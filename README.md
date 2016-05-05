@@ -5,7 +5,7 @@ A server app that works with chatterbox-client as a replacement for Parse API.
 
 ### Run App
 
-To run from the command line, enter the following:
+From command line, enter the following:
 
 ```
 bower install
