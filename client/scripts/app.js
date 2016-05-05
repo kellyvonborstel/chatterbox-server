@@ -178,10 +178,8 @@ $(function() {
 
       if (username !== undefined) {
         console.log('chatterbox: Adding %s as a friend', username);
-
         // store as a friend
         app.friends[username] = true;
-
         // escape the username in case it contains a quote
         var selector = '[data-username="' + username.replace(/"/g, '\\\"') + '"]';
         // bold all previous messages
@@ -221,7 +219,6 @@ $(function() {
       };
 
       app.send(message);
-
       // stop form from submitting
       event.preventDefault();
     },
@@ -236,4 +233,5 @@ $(function() {
       $('form input[type=submit]').attr('disabled', null);
     }
   };
+
 }());
