@@ -14,11 +14,10 @@ bower install
 npm install
 ```
 ```
-./server/basic-server.js
+node server/basic-server.js
 ``` 
-In your browser, open the index file.
 ```
-./client/index.html
+open client/index.html
 ``` 
 
 ### Testing
