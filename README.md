@@ -1,7 +1,7 @@
 Chatterbox
 ==============
 
-A server app that works with [chatterbox-client](https://github.com/kellyvonborstel/chatterbox-client) as a replacement for Parse API.
+Server app that works with [chatterbox-client](https://github.com/kellyvonborstel/chatterbox-client) as a replacement for Parse API
 
 ### Run App
 
